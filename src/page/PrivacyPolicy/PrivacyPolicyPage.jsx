@@ -1,0 +1,53 @@
+import { IoChevronBack } from "react-icons/io5";
+import { TbEdit } from "react-icons/tb";
+import { Link } from "react-router-dom";
+import CustomButton from "../../utils/CustomButton";
+import { Spin } from "antd"; // Importing Spin  
+import { useGetAllSettingsQuery } from "../../redux/features/setting/settingApi";
+import { useEffect } from "react";
+
+const PrivacyPolicyPage = () => {
+  const status = 'privacy';
+  const { data: privacyPolicy, isLoading, refetch } = useGetAllSettingsQuery(status);
+  console.log(privacyPolicy?.data?.description);
+
+  useEffect(() => {
+    refetch();
+  }, []);
+
+
+  return (
+    <section className="w-full h-full min-h-screen text-white ">
+      <div className="flex justify-between items-center py-5">
+        <Link to="/settings" className="flex gap-2 items-center text-white">
+          <>
+            <IoChevronBack className="text-2xl" />
+          </>
+          <h1 className="text-2xl font-semibold">Privacy Policy</h1>
+        </Link>
+        <Link to={'/settings/edit-privacy-policy'}>
+          <button className="bg-[#fecd38] text-white flex items-center gap-2 p-2 rounded-md font-bold" border>
+            <TbEdit className="size-5" />
+            <span>Edit</span>
+          </button>
+        </Link>
+      </div>
+
+      {/* Show Spin loader if data is loading */}
+
+      {isLoading ? (
+        <div className="w-full h-full flex justify-center items-center">
+          <Spin size="large" />
+        </div>
+      ) : (
+        <div className="w-full h-full ml-3 ">
+          <div dangerouslySetInnerHTML={{ __html: privacyPolicy?.data?.description }} />
+
+        </div>
+      )}
+
+    </section>
+  );
+}
+
+export default PrivacyPolicyPage;

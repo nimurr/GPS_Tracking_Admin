@@ -106,7 +106,7 @@ const Header = ({ toggleSidebar }) => {
         {/* Left — welcome */}
         <div>
           <h2 className="text-2xl font-semibold text-black">Welcome, Enrique</h2>
-          <p className="text-[#fecd38] text-sm">Have a nice day!</p>
+          <p className="text-[#fe3838] text-sm">Have a nice day!</p>
         </div>
 
         {/* Mobile hamburger */}

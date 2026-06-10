@@ -107,7 +107,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `w-[80%] mx-auto px-5 py-2 flex justify-start items-center gap-3 rounded text-[#000000] ${isActive ? "bg-[#fecd38] !text-white " : ""
+                `w-[80%] mx-auto px-5 py-2 flex justify-start items-center gap-3 rounded text-[#000000] ${isActive ? "bg-[#fe3838] !text-white " : ""
                 }`
               }
             >

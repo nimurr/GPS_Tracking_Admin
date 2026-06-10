@@ -26,6 +26,8 @@ import ReportAndIssue from "../page/ReportAndIssue/ReportAndIssue";
 import EventsAll from "../page/Events/EventsAll";
 import EventsAllDetails from "../page/Events/EventsAllDetails";
 import AllAgencies from "../page/Users/UserRequestList";
+import AllUserMap from "../page/AllUserMap/AllUserMap";
+import AlertsSOS from "../page/AlertsSOS/AlertsSOS";
 
 
 const router = createBrowserRouter([
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/agency-list",
         element: <AllAgencies />,
+      },
+      {
+        path: "/live-map",
+        element: <AllUserMap />,
+      },
+      {
+        path: "/alerts-sos",
+        element: <AlertsSOS />,
       },
       {
         path: "/meal-plan",

@@ -1,37 +1,64 @@
 import React from 'react';
-import { FaUsersGear } from 'react-icons/fa6';
 import { RiUserVoiceFill } from 'react-icons/ri';
+import { FaUsersGear } from 'react-icons/fa6';
+import { MdPersonOff, MdSos, MdLocationOn } from 'react-icons/md';
 
 const stats = [
   {
-    title: 'Total Agency',
-    value: '08',
+    title: 'Total Agencies',
+    value: '128',
     icon: <RiUserVoiceFill size={28} />,
+    bg: 'bg-blue-600',
   },
   {
-    title: 'Total Visitor',
-    value: '322',
-    icon: <FaUsersGear size={28} />
+    title: 'Total Members',
+    value: '24,789',
+    icon: <FaUsersGear size={28} />,
+    bg: 'bg-green-600',
   },
   {
-    title: 'Total Group Created',
-    value: '455',
-    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="28" height="28"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M1 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2" /><circle cx="9" cy="7" r="4" /></svg>,
+    title: 'Missing Members',
+    value: '18',
+    icon: <MdPersonOff size={28} />,
+    bg: 'bg-red-600',
+  },
+  {
+    title: 'SOS Alerts',
+    value: '3',
+    icon: <MdSos size={28} />,
+    bg: 'bg-red-900',
+    badge: 'Active',
+  },
+  {
+    title: 'Active Umrah',
+    value: '156',
+    icon: <MdLocationOn size={28} />,
+    bg: 'bg-emerald-600',
   },
 ];
 
 const DashboardStats = () => (
-  <div className="grid md:grid-cols-3 gap-3 p-4 bg-[#111] rounded-2xl">
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 p-4">
     {stats.map((stat) => (
       <div
         key={stat.title}
-        className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-[14px] px-[22px] py-5 flex flex-col items-center text-center gap-2"
+        className={`${stat.bg} rounded-[14px] px-4 py-6 flex flex-col gap-2 text-white`}
       >
-        <span className="text-white">{stat.icon}</span>
-        <span className="text-sm text-[#aaa]">{stat.title}</span>
-        <span className="text-[36px] font-bold text-[#fecd38] leading-none font-mono">
-          {stat.value}
+        <span className="text-xs font-semibold uppercase tracking-wider opacity-85">
+          {stat.title}
         </span>
+        <div className="flex items-end justify-between">
+          <span className="text-[32px] font-bold leading-none font-mono">
+            {stat.value}
+          </span>
+          {stat.badge ? (
+            <span className="text-[11px] bg-white/20 px-2 py-0.5 rounded-full">
+              {stat.badge}
+            </span>
+          ) : (
+            <span className="opacity-70">{stat.icon}</span>
+          )}
+        </div>
       </div>
     ))}
   </div>

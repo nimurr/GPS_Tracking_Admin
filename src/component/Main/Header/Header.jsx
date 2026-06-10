@@ -102,10 +102,10 @@ const Header = ({ toggleSidebar }) => {
 
   return (
     <>
-      <div className="w-full px-5 py-3.5 bg-[#161616] flex justify-between items-center border-b border-white/10 text-white sticky top-0 left-0 z-10">
+      <div className="w-full px-5 py-3.5  flex bg-white justify-between items-center border-b border-white/10 sticky top-0 left-0 z-10">
         {/* Left — welcome */}
         <div>
-          <h2 className="text-2xl font-semibold">Welcome, Enrique</h2>
+          <h2 className="text-2xl font-semibold text-black">Welcome, Enrique</h2>
           <p className="text-[#fecd38] text-sm">Have a nice day!</p>
         </div>
 
@@ -113,7 +113,7 @@ const Header = ({ toggleSidebar }) => {
 
         {/* Right — bell + avatar */}
         <div className="flex items-center gap-3">
-          <button className="md:hidden text-white text-3xl" onClick={toggleSidebar}>
+          <button className="md:hidden text-black text-3xl" onClick={toggleSidebar}>
             <FiMenu />
           </button>
           <button

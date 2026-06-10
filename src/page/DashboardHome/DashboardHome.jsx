@@ -20,7 +20,7 @@ const DashboardHome = () => {
       <DashboardOverviewStatus />
       <br />
       <GrouthAndSubscriptionOverview />
-      <AllAgencies />
+      {/* <AllAgencies /> */}
     </section>
   );
 };

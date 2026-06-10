@@ -10,7 +10,7 @@ const MainLayout = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
   return (
-    <main className="w-full h-full flex bg-black min-h-screen relative">
+    <main className="w-full h-full flex  min-h-screen relative">
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       {/* Main Content */}
       <section className="w-full h-full md:ml-[200px] lg:ml-[250px] xl:ml-[280px]">
@@ -23,7 +23,7 @@ const MainLayout = () => {
       {/* Overlay when sidebar is open on mobile */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-50 z-30 px-10"
+          className="fixed inset-0  opacity-50 z-30 px-10"
           onClick={toggleSidebar}
         ></div>
       )}

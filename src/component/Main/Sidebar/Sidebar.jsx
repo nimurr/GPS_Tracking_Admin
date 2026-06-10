@@ -6,13 +6,14 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "/Auth/logo.png";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../../redux/features/auth/authSlice";
-import { MdDashboard } from "react-icons/md";
+import { MdDashboard, MdOutlineSos } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { GiMeal } from "react-icons/gi";
 import { AiFillCrown } from "react-icons/ai";
 import { FaAngleRight, FaChevronRight, FaGripfire, FaProductHunt, FaUsersViewfinder } from "react-icons/fa6";
 import { RiUserVoiceFill } from "react-icons/ri";
+import { LuMapPin } from "react-icons/lu";
 
 
 const sidebarItems = [
@@ -23,8 +24,18 @@ const sidebarItems = [
   },
   {
     path: "/agency-list",
-    name: "Agency Overview",
+    name: "Groups & Agencies",
     icon: <RiUserVoiceFill className="size-6" />,
+  },
+  {
+    path: "/live-map",
+    name: "Live Map",
+    icon: <LuMapPin className="size-6" />,
+  },
+  {
+    path: "/alerts-sos",
+    name: "Alerts / SOS",
+    icon: <MdOutlineSos className="size-6" />,
   },
    {
     path: "/settings",
@@ -86,7 +97,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <div className="relative">
       {/* Desktop Sidebar */}
-      <div className="hidden overflow-y-auto md:block w-full md:w-[200px] lg:w-[250px] xl:w-[280px] h-full bg-[#1a1a1a] border-r fixed">
+      <div className="hidden overflow-y-auto md:block w-full md:w-[200px] bg-white lg:w-[250px] xl:w-[280px] h-full   border-r fixed">
         <Link to={"/"} className="flex flex-col justify-center items-center pt-5 gap-2">
           <img src={logo} alt="logo" className="w-40 mx-auto rounded mb-20 mt-5" />
         </Link>
@@ -96,7 +107,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `w-[80%] mx-auto px-5 py-2 flex justify-start items-center gap-3 rounded text-[#fecd38] ${isActive ? "bg-[#fecd38] !text-white " : ""
+                `w-[80%] mx-auto px-5 py-2 flex justify-start items-center gap-3 rounded text-[#000000] ${isActive ? "bg-[#fecd38] !text-white " : ""
                 }`
               }
             >
